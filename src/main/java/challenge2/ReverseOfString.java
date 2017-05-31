@@ -1,6 +1,6 @@
 package challenge2;
 
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 public class ReverseOfString {
 
@@ -22,6 +22,6 @@ public class ReverseOfString {
 	
 	public static void main(String a[])
 	{
-		System.out.println(reverse("twike"));
+		System.out.println(reverse("tw98ke"));
 	}
 }

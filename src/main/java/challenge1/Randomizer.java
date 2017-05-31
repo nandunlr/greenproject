@@ -1,14 +1,15 @@
 package challenge1;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Random;
 import java.util.concurrent.PriorityBlockingQueue;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 public class Randomizer extends Thread {
-	
+
 	private static Logger logger = Logger.getLogger(Randomizer.class);
 	private Socket socket;
 	private InputStream inputStream;
@@ -22,9 +23,13 @@ public class Randomizer extends Thread {
 			this.outPutStream = socket.getOutputStream();
 			this.priorityBq = priorityBq;
 
-			System.out.println("Client connected : " + socket.getInetAddress().toString());
+			logger.info("Client connected : " + socket.getInetAddress().toString());
+			// System.out.println("Client connected : " +
+			// socket.getInetAddress().toString());
 		} catch (IOException e) {
-			System.out.println("Could not initialize communication properly. -- CommunicationThread.\n");
+			logger.info("Could not initialize communication properly. -- CommunicationThread.\n");
+			// System.out.println("Could not initialize communication properly.
+			// -- CommunicationThread.\n");
 		}
 	}
 

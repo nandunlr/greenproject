@@ -2,11 +2,10 @@ package challenge2;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Logger;
+
 
 public class Employee {
 
-	private static Logger logger = Logger.getLogger(Employee.class);
 	private Integer id;
 	
 	private String name;

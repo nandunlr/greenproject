@@ -1,12 +1,10 @@
 package challenge2;
 
-import java.util.logging.Logger;
 
 import challenge1.Randomizer;
 
 public class Address {
 
-	private static Logger logger = Logger.getLogger(Address.class);
 	private String addressLine1;
 	
 	private String addressLine2;
