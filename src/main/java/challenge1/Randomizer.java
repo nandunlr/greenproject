@@ -7,7 +7,11 @@ import java.net.Socket;
 import java.util.Random;
 import java.util.concurrent.PriorityBlockingQueue;
 import org.apache.log4j.Logger;
-
+/**
+ * 
+ * @author Narendra
+ *
+ */
 public class Randomizer extends Thread {
 
 	private static Logger logger = Logger.getLogger(Randomizer.class);
@@ -24,12 +28,8 @@ public class Randomizer extends Thread {
 			this.priorityBq = priorityBq;
 
 			logger.info("Client connected : " + socket.getInetAddress().toString());
-			// System.out.println("Client connected : " +
-			// socket.getInetAddress().toString());
 		} catch (IOException e) {
 			logger.info("Could not initialize communication properly. -- CommunicationThread.\n");
-			// System.out.println("Could not initialize communication properly.
-			// -- CommunicationThread.\n");
 		}
 	}
 

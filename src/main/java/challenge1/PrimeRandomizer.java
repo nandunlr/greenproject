@@ -1,8 +1,14 @@
 package challenge1;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.concurrent.PriorityBlockingQueue;
 import org.apache.log4j.Logger;
+/**
+ * 
+ * @author Narendra
+ *
+ */
 
 public class PrimeRandomizer {
 
@@ -21,25 +27,23 @@ public class PrimeRandomizer {
 
 			while (true) {
 
-				System.out.println("Waiting for a Randomizer to connect...");
+				System.out.println("Waiting for Randomizer to connect...");
 
 				new Randomizer(serverSocket.accept(), server.priorityBq).start();
 
-				int num=server.priorityBq.take();
-				int temp=0;
-				for(int i=2;i<=num/2;i++)
-				{
-			           temp=num%i;
-				   if(temp==0)
-				   {
-					  System.out.println(num + " is Prime Number");
-				      break;
-				   }
+				int num = server.priorityBq.take();
+				int temp = 0;
+				for (int i = 2; i <= num / 2; i++) {
+					temp = num % i;
+					if (temp == 0) {
+						logger.info(num + " is Prime Number");
+						break;
+					}
 				}
-				
+
 			}
 		} catch (IOException e) {
-			System.out.println("Exception occured :" + e.getStackTrace());
+			logger.info("Exception occured :" + e.getStackTrace());
 		}
 	}
 }

@@ -1,10 +1,14 @@
 package challenge2;
 
 import org.apache.log4j.Logger;
-
+/**
+ * 
+ * @author Narendra
+ *
+ */
 public class ReverseOfString {
 
-	private static Logger logger = Logger.getLogger(EmployeeCollection.class);
+	private static Logger logger = Logger.getLogger(ReverseOfString.class);
 
 	public static String reverse(String orig)
 	{
@@ -22,6 +26,6 @@ public class ReverseOfString {
 	
 	public static void main(String a[])
 	{
-		System.out.println(reverse("tw98ke"));
+		logger.info(reverse("LeeMo32re"));
 	}
 }
